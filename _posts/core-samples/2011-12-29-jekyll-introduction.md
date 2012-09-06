@@ -72,6 +72,11 @@ is intended to give you the _full picture_ relative to what is going on in Jekyl
 Learning these core concepts should help you avoid common frustrations and ultimately 
 help you better understand the code examples contained throughout Jekyll-Bootstrap.
 
+    .
+    |
+    |
+    |--PENIS
+
 
 ## Initial Setup
 
