@@ -132,17 +132,7 @@ header{
 }
 
 #first-name, #last-name{
-  width: 50%;
   display: none;
-}
-
-#first-name{
-  text-align: right;
-  padding-right: 0.5em;
-}
-
-#last-name{
-  padding-left: 0.5em;
 }
 
 #avatar{
@@ -208,20 +198,59 @@ i.fa {
 // desktop styles
 
 @media screen and (min-width: 800px) {
-  #first-name{ order: 1; color: $highlight-color; }
+  #first-name{ order: 1; display: inline; }
   #avatar    { order: 2; }
-  #last-name { order: 3; }
+  #last-name { order: 3; display: inline; }
+  #full-name { display: none; }
 
-  .personal-link, .professional-link{
-    font-size: $base-link-font-size;
+  #first-name, #last-name{ 
+    display: inline; 
+  }
+
+  #avatar{
+    padding: $spacing-unit;
+    width: 112px;
   }
 
   #name{
     .headline{
+      font-size: 70px;
       font-weight: bold;
       display: flex;
+      align-items: center;
+      justify-content: center;
       letter-spacing: 0.25em;
     }
+  }
+
+  article{
+    width: 770px;
+    margin: 0 auto;
+    display: flex;
+  }
+
+  header{ order: 2 }
+  .links{ order: 1 }
+
+  .links{
+    flex-wrap: wrap;
+    margin: 0;
+    margin-right: $spacing-unit * 2;
+    min-width: 160px;
+    justify-content: flex-start;
+  }
+
+  #personal-links{
+    text-align: left;
+    order: 2;
+  }
+
+  .personal-link, .professional-link{
+    font-size: 18px;
+  }
+
+  i.fa{
+    display: none;
   }
 }
 
