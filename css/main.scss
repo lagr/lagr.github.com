@@ -1,0 +1,227 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+// Our variables
+$base-font-family: 'Roboto Condensed', "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-size:   16px;
+$base-font-weight: 400;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$headline-link-factor: 24 / 70;
+$base-headline-font-size: 70px;
+$base-link-font-size: $base-headline-font-size * $headline-link-factor;
+
+$spacing-unit:     32px;
+
+$dark-blue:        hsl(215,  11.3%, 20.8%);
+$dark-red:         hsl(  0,    40%, 31.4%);
+$light-red:        #142D3D;
+$brown:            hsl( 90,   3.2%, 49.4%);
+
+$text-color:       $dark-blue;
+$background-color: white; //$brown;
+$brand-color:      $dark-blue;
+$highlight-color:  #703030;
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+$laptop:        800px;
+
+/**
+ * Reset some basic elements
+ */
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
+  margin: 0;
+  padding: 0; }
+
+/**
+ * Basic styling
+ */
+body {
+  font: 400 16px/1.5 "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #2f343b;
+  background-color: white;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-feature-settings: "kern" 1;
+  -moz-font-feature-settings: "kern" 1;
+  -o-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal; }
+
+/**
+ * Set `margin-bottom` to maintain vertical rhythm
+ */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure,
+.highlight {
+  margin-bottom: 16px; }
+
+/**
+ * Images
+ */
+img {
+  max-width: 100%;
+  vertical-align: middle; }
+
+/**
+ * Lists
+ */
+ul, ol {
+  margin-left: 32px; }
+
+li > ul,
+li > ol {
+  margin-bottom: 0; }
+
+/**
+ * Headings
+ */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400; }
+
+body{
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  background-color: $background-color;
+}
+
+a{
+  color: $dark-red;
+  text-decoration: none; 
+  &:visited{
+    color: lighten($dark-blue, 20%);
+  }
+  &:hover {
+    text-decoration: underline; 
+  }
+}
+
+article{
+  margin: 0 $spacing-unit;
+}
+
+header{
+  text-align: justify;
+}
+
+.headline{
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: $base-headline-font-size;
+}
+
+#name{
+  display: block;
+  color: $brand-color;
+  &:visited, &:hover{
+    text-decoration: none;
+    color: $brand-color;
+  }
+  .headline {
+    font-size: 32px;
+    text-align: center;
+  }
+}
+
+#first-name, #last-name{
+  width: 50%;
+  display: none;
+}
+
+#first-name{
+  text-align: right;
+  padding-right: 0.5em;
+}
+
+#last-name{
+  padding-left: 0.5em;
+}
+
+#avatar{
+  border-radius: 100%;
+}
+
+#avatar{    
+  width: 34%;
+  padding: 0 33%;
+  margin: $spacing-unit 0;
+}
+
+.links{
+  display: flex;
+  justify-content: space-around;
+  margin: $spacing-unit 0;
+}
+
+#personal-links, #professional-links{
+  list-style-type: none;
+  text-transform: uppercase;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#personal-links{
+  color: $dark-red;
+  text-align: right;
+}
+
+#professional-links{
+  color: $dark-blue;
+}
+
+i.fa {
+  min-width: 25px;
+  text-align: center;
+}
+
+@media screen and (max-width: 374px) {
+  i.fa {
+    display: none;
+  }
+}
+
+// tablet styles
+@media screen and (min-width: 768px) and (max-width: 799px) {
+  #avatar {
+    width: 20%;
+    padding: 0 40%;
+  }
+  #full-name{
+    display: block;
+  }
+  article {
+    margin: 0 128px;
+  }
+  .links{
+    font-size: 1.2em;
+  }
+}
+
+// desktop styles
+
+@media screen and (min-width: 800px) {
+  #first-name{ order: 1; color: $highlight-color; }
+  #avatar    { order: 2; }
+  #last-name { order: 3; }
+
+  .personal-link, .professional-link{
+    font-size: $base-link-font-size;
+  }
+
+  #name{
+    .headline{
+      font-weight: bold;
+      display: flex;
+      letter-spacing: 0.25em;
+    }
+  }
+}
+
